@@ -30,12 +30,12 @@ std::vector<int> genPrimes(int stop)
     return primes;
 }
 
-// Returns the LCM (lowest common multiple) of the numbers in range start to stop (inclusive)
-uint64_t LCM(int start, int stop)
+// Returns the LCM (lowest common multiple) of the numbers in range 1 to stop (inclusive)
+uint64_t LCM(int stop)
 {
     uint64_t commonFactor = 1, num, curPrime;
     std::vector<int> primes = genPrimes(stop);
-    for (int i = start; i <= stop; i++)
+    for (int i = 2; i <= stop; i++)
     {
         curPrime = 2;
         num = i;
@@ -52,11 +52,9 @@ uint64_t LCM(int start, int stop)
 }
 int main()
 {
-    int start, stop;
-    std::cout << "Enter your start number \n";
-    std::cin >> start;
+    int stop;
     std::cout << "Enter your stop number \n";
     std::cin >> stop;
-    std::cout << LCM(start, stop);
+    std::cout << LCM(stop);
     return 0;
 }
